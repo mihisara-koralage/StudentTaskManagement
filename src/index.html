@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚Library Management System</h1>
+
+        <!-- Add Book Form -->
+        <div class="card">
+            <h2>Add New Book</h2>
+            <form id="add-book-form">
+                <input type="text" id="title" placeholder="Book Title" required>
+                <input type="text" id="author" placeholder="Author Name" required>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </form>
+        </div>
+
+        <!-- Lend Book Section -->
+        <div class="card">
+            <h2>Lend / Borrow Book</h2>
+            <form id="lend-form">
+                <select id="borrower-name" required>
+                    <option value="">Select Member (Borrower)</option>
+                    <option value="Alice">Alice</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Charlie">Charlie</option>
+                    <option value="Diana">Diana</option>
+                    <option value="Ethan">Ethan</option>
+                </select>
+                <select id="select-book" required>
+                    <option value="">Select Available Book</option>
+                </select>
+                <button type="submit" class="btn btn-success">Lend Book</button>
+            </form>
+        </div>
+
+        <!-- Book Catalog / List -->
+        <div class="card">
+            <h2>Book Catalog & Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Status / Borrower</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+                    <!-- Dynamic Rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
