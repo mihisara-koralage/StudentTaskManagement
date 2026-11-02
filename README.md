@@ -5,6 +5,7 @@
 * Chamuditha Hirushan
 * Hirusha Nirmal
 * Dineth Nethsara
+* Nimaya Gamage
 
 ## Project Objective
 To design and implement a streamlined system for managing library operations, including inventory tracking, user management, and lending workflows.
@@ -13,3 +14,8 @@ To design and implement a streamlined system for managing library operations, in
 * **Add New Book:** Register new titles, authors, and stock quantities into the system inventory.
 * **Lend / Borrow Book:** Manage book checkouts, returns, and due date tracking for library members.
 * **Book Catalog & Status:** Browse available titles and check real-time availability status.
+
+## Current Development Status
+
+Intial Version Completed
+Version 1.0.0
