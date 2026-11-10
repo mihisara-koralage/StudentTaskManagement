@@ -14,3 +14,7 @@ feature/CR-02-ui:
 UI development.
 feature/CR-03-validation:
 Validation development.
+
+Integration Test:
+PASS
+
