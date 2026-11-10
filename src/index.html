@@ -1,65 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
+    <meta name="theme-color" content="#f0f3fb">
+    <meta name="description" content="Modern Folio Library Management Dashboard">
+    <title>Folio | Library Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>📚Library Management System</h1>
+<div class="app-shell">
 
-        <!-- Add Book Form -->
-        <div class="card">
-            <h2>Add New Book</h2>
-            <form id="add-book-form">
-                <input type="text" id="title" placeholder="Book Title" required>
-                <input type="text" id="author" placeholder="Author Name" required>
-                <button type="submit" class="btn btn-primary">Add Book</button>
-            </form>
+    <aside class="sidebar" id="sidebar">
+        <a href="#" class="brand">
+            <span class="brand-icon">📚</span>
+            <span>
+                <strong>folio.</strong>
+                <small>LIBRARY MANAGER</small>
+            </span>
+        </a>
+
+        <p class="nav-caption">WORKSPACE</p>
+
+        <nav class="side-nav">
+            <a href="#overview" class="nav-link active">▦ Overview</a>
+            <a href="#catalog" class="nav-link">📖 Book Catalog</a>
+            <a href="#add-book" class="nav-link">＋ Add a Book</a>
+            <a href="#lend-book" class="nav-link">⇄ Borrow & Return</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-note">
+                ✦ Every good story deserves a place on the shelf.
+            </div>
+            <p>Folio Library System <span>v2.0</span></p>
         </div>
+    </aside>
 
-        <!-- Lend Book Section -->
-        <div class="card">
-            <h2>Lend / Borrow Book</h2>
-            <form id="lend-form">
-                <select id="borrower-name" required>
-                    <option value="">Select Member (Borrower)</option>
-                    <option value="Alice">Alice</option>
-                    <option value="Bob">Bob</option>
-                    <option value="Charlie">Charlie</option>
-                    <option value="Diana">Diana</option>
-                    <option value="Ethan">Ethan</option>
-                </select>
-                <select id="select-book" required>
-                    <option value="">Select Available Book</option>
-                </select>
-                <button type="submit" class="btn btn-success">Lend Book</button>
-            </form>
+    <main class="main-area" id="overview">
+
+        <header class="topbar">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+            <div class="breadcrumbs">
+                Workspace / <strong>Overview</strong>
+            </div>
+
+            <div class="profile">
+                <span class="avatar">LA</span>
+                <div>
+                    <strong>Library Admin</strong>
+                    <small>Administrator</small>
+                </div>
+                <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">◐</button>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <section class="welcome-section">
+                <div>
+                    <p class="eyebrow">✦ YOUR LIBRARY AT A GLANCE</p>
+                    <h1>A home for every <em>story.</em></h1>
+                    <p class="intro-text">
+                        Manage your collection, track borrowed books,
+                        and keep everything beautifully organized.
+                    </p>
+                </div>
+
+                <a href="#add-book" class="btn btn-primary">＋ Add New Book</a>
+            </section>
+
+            <!-- STATISTICS -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Total Books</span>
+                        <span class="stat-icon blue">📚</span>
+                    </div>
+                    <strong id="stat-total">0</strong>
+                    <p>Books in collection</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Available</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <strong id="stat-available">0</strong>
+                    <p>Ready to borrow</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Borrowed</span>
+                        <span class="stat-icon orange">⇄</span>
+                    </div>
+                    <strong id="stat-borrowed">0</strong>
+                    <p>Currently borrowed</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Overdue</span>
+                        <span class="stat-icon red">!</span>
+                    </div>
+                    <strong id="stat-overdue">0</strong>
+                    <p>Past return date</p>
+                </div>
+
+            </section>
+
+            <!-- FORMS -->
+
+            <section class="forms-grid">
+
+                <div class="card" id="add-book">
+                    <div class="section-heading">
+                        <span class="section-icon">＋</span>
+                        <div>
+                            <h2>Add a New Book</h2>
+                            <p>Grow your library collection.</p>
+                        </div>
+                    </div>
+
+                    <form id="add-book-form" class="stacked-form">
+
+                        <div class="field">
+                            <label>Book Title</label>
+                            <input type="text" id="title" placeholder="Enter book title" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Author Name</label>
+                            <input type="text" id="author" placeholder="Enter author name" required>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Add to Collection ↗
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="card" id="lend-book">
+
+                    <div class="section-heading">
+                        <span class="section-icon purple">⇄</span>
+                        <div>
+                            <h2>Lend a Book</h2>
+                            <p>Manage book borrowing.</p>
+                        </div>
+                    </div>
+
+                    <form id="lend-form" class="stacked-form">
+
+                        <div class="field">
+                            <label>Library Member</label>
+                            <select id="borrower-name" required>
+                                <option value="">Select a member</option>
+                                <option>Alice</option>
+                                <option>Bob</option>
+                                <option>Charlie</option>
+                                <option>Diana</option>
+                                <option>Ethan</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Available Book</label>
+                            <select id="select-book" required>
+                                <option value="">Select a book</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-success btn-block" type="submit">
+                            Confirm Lending ↗
+                        </button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- BOOK CATALOG -->
+
+            <section class="card catalog-card" id="catalog">
+
+                <div class="catalog-header">
+                    <div>
+                        <p class="eyebrow">YOUR COLLECTION</p>
+                        <h2>Book Catalog <span id="catalog-count">0 books</span></h2>
+                        <p>Browse and manage your books.</p>
+                    </div>
+
+                    <div class="search-box">
+                        <input type="search" id="catalog-search"
+                            placeholder="Search title or author...">
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="All">All Books</button>
+                    <button class="filter-btn" data-filter="Available">Available</button>
+                    <button class="filter-btn" data-filter="Borrowed">Borrowed</button>
+                    <select id="sort-books">
+                        <option value="newest">Newest First</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>BOOK TITLE</th>
+                                <th>AUTHOR</th>
+                                <th>STATUS / BORROWER</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="book-list"></tbody>
+                    </table>
+                </div>
+
+                <div id="catalog-empty" class="catalog-empty" hidden>
+                    <strong>No books found</strong>
+                    <p>Add a new book or change your search.</p>
+                </div>
+
+            </section>
+
+            <footer>
+                Made for the love of reading ✦ Folio Library Management
+            </footer>
+
         </div>
+    </main>
+</div>
 
-        <!-- Book Catalog / List -->
-        <div class="card">
-            <h2>Book Catalog & Status</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Status / Borrower</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="book-list">
-                    <!-- Dynamic Rows -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div id="toast" class="toast"></div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
