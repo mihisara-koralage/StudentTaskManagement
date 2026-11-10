@@ -6,3 +6,11 @@
 | CI-04 | Test cases | Test artifact | Reviewer | v0.1 |
 | CI-05 | Build/configuration files | Configuration | Developer | v0.1 |
 ```[cite: 1]
+
+Branching Strategy
+main:
+Stable integrated version.
+feature/CR-02-ui:
+UI development.
+feature/CR-03-validation:
+Validation development.
