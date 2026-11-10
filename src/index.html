@@ -1,117 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f0f3fb" />
-  <meta name="description" content="A modern library management dashboard." />
-  <title>Overview | Library Management</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f0f3fb">
+    <meta name="description" content="Modern Folio Library Management Dashboard">
+    <title>Folio | Library Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ambient-orb ambient-orb--blue" aria-hidden="true"></div>
-  <div class="ambient-orb ambient-orb--purple" aria-hidden="true"></div>
-  <div class="ambient-orb ambient-orb--peach" aria-hidden="true"></div>
 
-  <div class="app-shell">
-    <aside class="sidebar glass" aria-label="Main navigation">
-      <a class="brand" href="#overview" aria-label="Library Management home">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5.5c2.6-1.3 5.2-1.3 8 0v14c-2.8-1.3-5.4-1.3-8 0V5.5Z"/>
-            <path d="M20 5.5c-2.6-1.3-5.2-1.3-8 0v14c2.8-1.3 5.4-1.3 8 0V5.5Z"/>
-            <path d="M7 9h2M15 9h2"/>
-          </svg>
-        </span>
-        <span class="brand-copy"><strong>folio.</strong><small>LIBRARY MANAGER</small></span>
-      </a>
+<div class="app-shell">
 
-      <div class="sidebar-body">
+    <aside class="sidebar" id="sidebar">
+        <a href="#" class="brand">
+            <span class="brand-icon">📚</span>
+            <span>
+                <strong>folio.</strong>
+                <small>LIBRARY MANAGER</small>
+            </span>
+        </a>
+
         <p class="nav-caption">WORKSPACE</p>
-        <nav class="side-nav" aria-label="Sections">
-          <a class="nav-link nav-link--active" href="#overview" aria-current="page">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
-            <span>Overview</span>
-          </a>
-          <a class="nav-link" href="#catalog">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5c2.6-1.3 5.2-1.3 8 0v14c-2.8-1.3-5.4-1.3-8 0V5.5Z"/><path d="M20 5.5c-2.6-1.3-5.2-1.3-8 0v14c2.8-1.3 5.4-1.3 8 0V5.5Z"/></svg>
-            <span>Book catalog</span>
-          </a>
-          <a class="nav-link" href="#add-book">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>
-            <span>Add a book</span>
-          </a>
-          <a class="nav-link" href="#lend-book">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12m-4-4 4 4-4 4M17 17H5m4-4-4 4 4 4"/></svg>
-            <span>Borrow & return</span>
-          </a>
-        </nav>
-      </div>
 
-      <div class="sidebar-bottom">
-        <div class="sidebar-note"><span class="note-sparkle" aria-hidden="true">✦</span><p>Every good story deserves a place on the shelf.</p></div>
-        <div class="sidebar-footer">Folio Library System <span>v1.0</span></div>
-      </div>
+        <nav class="side-nav">
+            <a href="#overview" class="nav-link active">▦ Overview</a>
+            <a href="#catalog" class="nav-link">📖 Book Catalog</a>
+            <a href="#add-book" class="nav-link">＋ Add a Book</a>
+            <a href="#lend-book" class="nav-link">⇄ Borrow & Return</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-note">
+                ✦ Every good story deserves a place on the shelf.
+            </div>
+            <p>Folio Library System <span>v2.0</span></p>
+        </div>
     </aside>
 
     <main class="main-area" id="overview">
-      <header class="topbar glass">
-        <div class="breadcrumbs"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong>Overview</strong></div>
-        <div class="topbar-right">
-          <span class="topbar-indicator"><span class="live-dot"></span> Library dashboard</span>
-          <div class="profile" aria-label="Library administrator"><span class="avatar">LA</span><span class="profile-label"><strong>Library Admin</strong><small>Administrator</small></span></div>
+
+        <header class="topbar">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+            <div class="breadcrumbs">
+                Workspace / <strong>Overview</strong>
+            </div>
+
+            <div class="profile">
+                <span class="avatar">LA</span>
+                <div>
+                    <strong>Library Admin</strong>
+                    <small>Administrator</small>
+                </div>
+                <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">◐</button>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <section class="welcome-section">
+                <div>
+                    <p class="eyebrow">✦ YOUR LIBRARY AT A GLANCE</p>
+                    <h1>A home for every <em>story.</em></h1>
+                    <p class="intro-text">
+                        Manage your collection, track borrowed books,
+                        and keep everything beautifully organized.
+                    </p>
+                </div>
+
+                <a href="#add-book" class="btn btn-primary">＋ Add New Book</a>
+            </section>
+
+            <!-- STATISTICS -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Total Books</span>
+                        <span class="stat-icon blue">📚</span>
+                    </div>
+                    <strong id="stat-total">0</strong>
+                    <p>Books in collection</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Available</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <strong id="stat-available">0</strong>
+                    <p>Ready to borrow</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Borrowed</span>
+                        <span class="stat-icon orange">⇄</span>
+                    </div>
+                    <strong id="stat-borrowed">0</strong>
+                    <p>Currently borrowed</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>Overdue</span>
+                        <span class="stat-icon red">!</span>
+                    </div>
+                    <strong id="stat-overdue">0</strong>
+                    <p>Past return date</p>
+                </div>
+
+            </section>
+
+            <!-- FORMS -->
+
+            <section class="forms-grid">
+
+                <div class="card" id="add-book">
+                    <div class="section-heading">
+                        <span class="section-icon">＋</span>
+                        <div>
+                            <h2>Add a New Book</h2>
+                            <p>Grow your library collection.</p>
+                        </div>
+                    </div>
+
+                    <form id="add-book-form" class="stacked-form">
+
+                        <div class="field">
+                            <label>Book Title</label>
+                            <input type="text" id="title" placeholder="Enter book title" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Author Name</label>
+                            <input type="text" id="author" placeholder="Enter author name" required>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Add to Collection ↗
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="card" id="lend-book">
+
+                    <div class="section-heading">
+                        <span class="section-icon purple">⇄</span>
+                        <div>
+                            <h2>Lend a Book</h2>
+                            <p>Manage book borrowing.</p>
+                        </div>
+                    </div>
+
+                    <form id="lend-form" class="stacked-form">
+
+                        <div class="field">
+                            <label>Library Member</label>
+                            <select id="borrower-name" required>
+                                <option value="">Select a member</option>
+                                <option>Alice</option>
+                                <option>Bob</option>
+                                <option>Charlie</option>
+                                <option>Diana</option>
+                                <option>Ethan</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Available Book</label>
+                            <select id="select-book" required>
+                                <option value="">Select a book</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-success btn-block" type="submit">
+                            Confirm Lending ↗
+                        </button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- BOOK CATALOG -->
+
+            <section class="card catalog-card" id="catalog">
+
+                <div class="catalog-header">
+                    <div>
+                        <p class="eyebrow">YOUR COLLECTION</p>
+                        <h2>Book Catalog <span id="catalog-count">0 books</span></h2>
+                        <p>Browse and manage your books.</p>
+                    </div>
+
+                    <div class="search-box">
+                        <input type="search" id="catalog-search"
+                            placeholder="Search title or author...">
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="All">All Books</button>
+                    <button class="filter-btn" data-filter="Available">Available</button>
+                    <button class="filter-btn" data-filter="Borrowed">Borrowed</button>
+                    <select id="sort-books">
+                        <option value="newest">Newest First</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>BOOK TITLE</th>
+                                <th>AUTHOR</th>
+                                <th>STATUS / BORROWER</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="book-list"></tbody>
+                    </table>
+                </div>
+
+                <div id="catalog-empty" class="catalog-empty" hidden>
+                    <strong>No books found</strong>
+                    <p>Add a new book or change your search.</p>
+                </div>
+
+            </section>
+
+            <footer>
+                Made for the love of reading ✦ Folio Library Management
+            </footer>
+
         </div>
-      </header>
-
-      <div class="page-content">
-        <section class="welcome-section" aria-labelledby="page-title">
-          <div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR LIBRARY AT A GLANCE</p><h1 id="page-title">A home for every <em>story.</em></h1><p class="intro-text">Manage your collection, track borrowed books, and keep everything beautifully organized.</p></div>
-          <a class="btn btn-primary quick-add" href="#add-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add new book</a>
-        </section>
-
-        <section class="stats-grid" aria-label="Library statistics">
-          <div class="stat-card glass"><div class="stat-header"><span>Total books</span><span class="stat-icon stat-icon--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.6-1.3 5.2-1.3 8 0v14c-2.8-1.3-5.4-1.3-8 0V5.5Z"/><path d="M20 5.5c-2.6-1.3-5.2-1.3-8 0v14c2.8-1.3 5.4-1.3 8 0V5.5Z"/></svg></span></div><strong class="stat-value" id="stat-total">0</strong><p>Books in your collection</p></div>
-          <div class="stat-card glass"><div class="stat-header"><span>Available</span><span class="stat-icon stat-icon--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></span></div><strong class="stat-value" id="stat-available">0</strong><p>Ready to be borrowed</p></div>
-          <div class="stat-card glass"><div class="stat-header"><span>Borrowed</span><span class="stat-icon stat-icon--orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h12m-4-4 4 4-4 4M17 17H5m4-4-4 4 4 4"/></svg></span></div><strong class="stat-value" id="stat-borrowed">0</strong><p>Currently checked out</p></div>
-        </section>
-
-        <section class="forms-grid" aria-label="Manage library books">
-          <div class="card glass form-card" id="add-book">
-            <div class="section-heading"><div class="section-icon section-icon--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div><div><h2>Add a new book</h2><p>Grow your library collection.</p></div></div>
-            <form id="add-book-form" class="stacked-form">
-              <div class="field"><label for="title">Book title</label><input type="text" id="title" name="title" placeholder="e.g. The Great Gatsby" autocomplete="off" required /></div>
-              <div class="field"><label for="author">Author name</label><input type="text" id="author" name="author" placeholder="e.g. F. Scott Fitzgerald" autocomplete="off" required /></div>
-              <button type="submit" class="btn btn-primary btn-block">Add to collection <span aria-hidden="true">↗</span></button>
-            </form>
-          </div>
-
-          <div class="card glass form-card" id="lend-book">
-            <div class="section-heading"><div class="section-icon section-icon--violet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h12m-4-4 4 4-4 4M17 17H5m4-4-4 4 4 4"/></svg></div><div><h2>Lend a book</h2><p>Keep track of who has what.</p></div></div>
-            <form id="lend-form" class="stacked-form">
-              <div class="field"><label for="borrower-name">Library member</label><select id="borrower-name" name="borrower-name" required><option value="">Select a member</option><option value="Alice">Alice</option><option value="Bob">Bob</option><option value="Charlie">Charlie</option><option value="Diana">Diana</option><option value="Ethan">Ethan</option></select></div>
-              <div class="field"><label for="select-book">Available book</label><select id="select-book" name="select-book" required><option value="">Select an available book</option></select></div>
-              <button type="submit" class="btn btn-success btn-block">Confirm lending <span aria-hidden="true">↗</span></button>
-            </form>
-          </div>
-        </section>
-
-        <section class="card glass catalog-card" id="catalog" aria-labelledby="catalog-title">
-          <div class="catalog-header"><div><p class="eyebrow small-eyebrow">YOUR COLLECTION</p><h2 id="catalog-title">Book catalog <span class="catalog-count" id="catalog-count">0 books</span></h2><p>Browse your titles and manage book availability.</p></div><label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search catalog</span><input id="catalog-search" type="search" placeholder="Search title or author..." autocomplete="off" /></label></div>
-          <div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">BOOK TITLE</th><th scope="col">AUTHOR</th><th scope="col">STATUS / BORROWER</th><th scope="col">ACTION</th></tr></thead><tbody id="book-list"><!-- Existing script.js populates book rows here --></tbody></table></div>
-          <div id="catalog-empty" class="catalog-empty" hidden><div class="empty-icon" aria-hidden="true">⌕</div><strong>No books to display</strong><span>Add a book above or try a different search.</span></div>
-        </section>
-
-        <footer class="main-footer">Made for the love of reading <span aria-hidden="true">✦</span> Folio Library Management</footer>
-      </div>
     </main>
-  </div>
+</div>
 
-  <!-- Keep your existing application logic unchanged. -->
-  <script src="script.js"></script>
-  <!-- Optional UI-only behavior: catalog search and live statistics. -->
-  <script src="ui-enhancements.js"></script>
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
